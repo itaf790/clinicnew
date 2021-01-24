@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(MainActivity.this, " failed.",
+                                        Toast.makeText(MainActivity.this, "Authentication failed.",
                                                 Toast.LENGTH_SHORT).show();
                                         updateUI(null);
                                     }
@@ -103,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                 }else{
-                    Toast.makeText(MainActivity.this, "you must complete all the fields",
+                    Toast.makeText(MainActivity.this, "\n" +
+                                    "you must fill in all the fields",
                             Toast.LENGTH_SHORT).show();
                     if(!password.equals(confirmPass)){
                         Toast.makeText(MainActivity.this, "Confirm pass don't match password",
@@ -115,8 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 String email=emailText.getText().toString();
                 String password=passwordText.getText().toString();
                 if(!email.isEmpty() && !password.isEmpty() ){
@@ -132,18 +132,17 @@ public class MainActivity extends AppCompatActivity {
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w("TAG", "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(MainActivity.this, " failed.",
+                                        Toast.makeText(MainActivity.this, "Authentication failed.",
                                                 Toast.LENGTH_SHORT).show();
                                         updateUI(null);
 
                                     }
-                                    Intent intent = new Intent(MainActivity.this,signinactivity.class);
-                                    startActivity(intent);
+
                                 }
                             });
                 }else{
                     Toast.makeText(MainActivity.this, "\n" +
-                                    "you must fill in all the fields",
+                                    "You must fill all the fields",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -160,16 +159,14 @@ public class MainActivity extends AppCompatActivity {
                     loginBtn.setVisibility(View.INVISIBLE);
                     creatBtn.setText("Back to login");
                     signInButton.setVisibility(View.GONE);
-
-
                 }
-                else {
+                else{
                     confirme.setVisibility(View.INVISIBLE);
                     signUpBtn.setVisibility(View.INVISIBLE);
                     loginBtn.setVisibility(View.VISIBLE);
                     creatBtn.setText("Create Account");
-                } signInButton.setVisibility(View.VISIBLE);
-
+                    signInButton.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -245,11 +242,11 @@ public class MainActivity extends AppCompatActivity {
                                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                                     User user=documentSnapshot.toObject(User.class);
                                     if(user.getType().equals("Patient")){
-                                        Intent intent= new Intent(MainActivity.this, HomeActivity.class);
-                                        startActivity(intent);
+                                        Intent k = new Intent(MainActivity.this, HomeActivity.class);
+                                        startActivity(k);
                                     }else{
-                                        Intent intent = new Intent(MainActivity.this, DoctorHomeActivity.class);
-                                        startActivity(intent);
+                                        Intent k = new Intent(MainActivity.this, DoctorHomeActivity.class);
+                                        startActivity(k);
                                         //Snackbar.make(findViewById(R.id.main_layout), "Doctor interface entraint de realisation", Snackbar.LENGTH_SHORT).show();
                                     }
                                 }
@@ -258,8 +255,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                         } else {
-                            Intent Intent = new Intent (MainActivity.this, signinactivity.class);
-                            startActivity (Intent);
+                            Intent k = new Intent(MainActivity.this, signinactivity.class);
+                            startActivity(k);
                         }
                     }
                 });

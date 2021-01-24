@@ -6,24 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+
     <Button
         android:id="@+id/signOutBtn"
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:background="@drawable/button_danger"
         android:text="SignOut"
-        android:textColor="#1A2E2C"
+        android:textColor="#009688"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.93" />
 
     <LinearLayout
         android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="215dp"
+        android:layout_width="409dp"
+        android:layout_height="143dp"
 
         android:elevation="6dp"
         android:gravity="center"
@@ -49,84 +50,80 @@
 
     <Button
         android:id="@+id/btnRequst"
-        android:layout_width="165dp"
-        android:layout_height="87dp"
+        android:layout_width="105dp"
+        android:layout_height="96dp"
         android:background="@drawable/button_home"
-        android:fontFamily="sans-serif"
         android:text="Medical Folder"
-        android:textColor="#1A2E2C"
+        android:textColor="#22BE87"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appointement2"
-        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.895"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.513" />
 
     <Button
         android:id="@+id/myDoctors"
-        android:layout_width="113dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="105dp"
+        android:layout_height="96dp"
         android:background="@drawable/button_home"
-        android:fontFamily="sans-serif"
         android:text="My Doctors"
-        android:textColor="#1A2E2C"
+        android:textColor="#009688"
         android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
 
     <Button
         android:id="@+id/appointement2"
-        android:layout_width="165dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginBottom="98dp"
+        android:layout_width="128dp"
+        android:layout_height="95dp"
         android:background="@drawable/button_home"
-        android:fontFamily="sans-serif"
         android:text="Appointement"
-        android:textColor="#1A2E2C"
+        android:textColor="#22BE87"
         android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/signOutBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/myDoctors" />
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="113dp"
-        android:layout_height="93dp"
+        android:layout_width="128dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="@drawable/button_home"
-        android:fontFamily="sans-serif"
         android:text="Profile"
-        android:textColor="#1A2E2C"
+        android:textColor="#22BE87"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/appointement2"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.721" />
 
     <Button
         android:id="@+id/searchBtn"
-        android:layout_width="113dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginBottom="237dp"
+        android:layout_width="105dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/button_home"
-        android:fontFamily="sans-serif"
         android:text="Search"
-        android:textColor="#1A2E2C"
+        android:textColor="#22BE87"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/signOutBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintBottom_toTopOf="@+id/profile"
+        app:layout_constraintEnd_toStartOf="@+id/myDoctors"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.862" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

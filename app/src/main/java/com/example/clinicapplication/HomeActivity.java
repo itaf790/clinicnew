@@ -8,13 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.clinicapplication.info.calendier;
-import com.google.android.gms.common.internal.service.Common;
+
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Calendar;
 
 public class HomeActivity extends AppCompatActivity {
     Button SignOutBtn;
