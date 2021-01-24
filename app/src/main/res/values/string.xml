@@ -2,7 +2,7 @@
 <resources>
     <string name="ClinicAppointmentApp">ClinicAppointmentApp</string>
 
-    <string-array name = "record_type">
+    <string-array name = "Tretment_type">
         <item> Consultation </item>
         <item> Hospitalization </item>
     </string-array>
