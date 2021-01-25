@@ -125,7 +125,7 @@ public class EditProfileDoctorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String updateAddress = doctorAddress.getText().toString();
                 String updateName = doctorName.getText().toString();
-                //String updateEmail = doctorEmail.getText().toString();
+
                 String updatePhone = doctorPhone.getText().toString();
                 uploadProfileImage();
                 updateDoctorInfos(updateName, updateAddress, updatePhone);

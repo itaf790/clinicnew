@@ -16,9 +16,9 @@
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleTextColor="@android:color/white"
-        app:subtitleTextColor="@android:color/white"
-        android:background="#BEE3DF"/>
+        app:titleTextColor="@color/teal_700"
+        app:subtitleTextColor="@color/purple_700"
+        android:background="#009688"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/serachPatRecycle"

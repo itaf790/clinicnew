@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#DCF1EF"
+        android:background="#22BEA9"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -19,7 +19,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif"
             android:text="physical Information"
-            android:textColor="#009688"
+            android:textColor="#FFFFFF"
             android:textSize="30dp" />
     </LinearLayout>
     <EditText
@@ -101,12 +101,12 @@
         android:layout_width="310dp"
         android:layout_height="42dp"
         android:text="update info"
-        android:textColor="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bloodType"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView7"

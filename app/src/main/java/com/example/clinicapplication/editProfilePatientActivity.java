@@ -84,12 +84,7 @@ public class editProfilePatientActivity extends AppCompatActivity {
         doctorName.setText(current_name);
         doctorPhone.setText(current_phone);
         doctorAddress.setText(current_address);
-        /*
-        currentUserImg = FirebaseDatabase.getInstance().getReference("DoctorProfile").child("1590965871687");
-        Glide.with(this)
-                .load(currentUserImg)
-                .into(profileImage);
-                   */
+
         String userPhotoPath = currentDoctorUID + ".jpg";
         pathReference = storageRef.child("DoctorProfile/" + userPhotoPath); //Doctor photo in database
         pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfilePatientActivity">
+    tools:context=".profileDoctorActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#22BE87"
+        android:background="#009688"
         android:minHeight="?attr/actionBarSize"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
@@ -31,26 +31,25 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="238dp"
-        android:layout_height="161dp"
+        android:layout_width="369dp"
+        android:layout_height="228dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/profile" />
+        app:layout_constraintVertical_bias="0.135"
+        app:srcCompat="@drawable/doctor" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="470dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="324dp"
         android:background="@drawable/rounded_relativelayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -121,6 +120,33 @@
             android:textColor="#B9B9B9"
             android:textSize="16sp" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/doctor_specialite5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="262dp"
+            android:text="About"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/doctor_about"
+            android:layout_width="344dp"
+            android:layout_height="93dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="293dp"
+            android:text="About"
+            android:textColor="#B9B9B9"
+            android:textSize="16sp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/doctor_phone"
@@ -132,7 +158,7 @@
             android:layout_marginStart="74dp"
             android:layout_marginLeft="74dp"
             android:layout_marginTop="116dp"
-            android:text="+212 (0) 5 37 64 95 15"
+            android:text="+972 (0) 5 37 64 95 15"
             android:textColor="#B9B9B9"
             android:textSize="16sp" />
 
@@ -146,7 +172,7 @@
             android:layout_marginStart="75dp"
             android:layout_marginLeft="75dp"
             android:layout_marginTop="160dp"
-            android:text="dr.yamine@gmail.com"
+            android:text="dr.lina@gmail.com"
             android:textColor="#B9B9B9"
             android:textSize="16sp" />
 
@@ -160,11 +186,11 @@
             android:layout_marginStart="75dp"
             android:layout_marginLeft="75dp"
             android:layout_marginTop="204dp"
+            android:text="Dr. Lina, a General practitioner, has long experience in this field and holds many certificates"
             android:textColor="#B9B9B9"
             android:textSize="16sp" />
 
 
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,12 +64,13 @@
 
         <Button
             android:id="@+id/pat_request_accept_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="298dp"
-            android:layout_marginLeft="298dp"
-            android:text="Accept" />
+            android:layout_marginStart="254dp"
+            android:layout_marginLeft="254dp"
+            android:text="Accept"
+            app:backgroundTint="#009688" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

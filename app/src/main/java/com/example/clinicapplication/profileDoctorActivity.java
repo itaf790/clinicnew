@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,33 +29,33 @@ import com.squareup.picasso.Picasso;
 
 import dmax.dialog.SpotsDialog;
 
-public class ProfilePatientActivity extends AppCompatActivity {
+public class profileDoctorActivity extends AppCompatActivity {
+
     private MaterialTextView doctorName;
     private MaterialTextView doctorSpe;
     private MaterialTextView doctorPhone;
     private MaterialTextView doctorEmail;
     private MaterialTextView doctorAddress;
-
+    private MaterialTextView doctorAbout;
     private ImageView doctorImage;
     StorageReference pathReference ;
     final String doctorID = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    DocumentReference docRef = db.collection("Patient").document("" + doctorID + "");
+    DocumentReference docRef = db.collection("Doctor").document("" + doctorID + "");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_patient);
+        setContentView(R.layout.activity_profile_doctor);
 
+        doctorImage = findViewById(R.id.imageView3);
         doctorName = findViewById(R.id.doctor_name);
         doctorSpe = findViewById(R.id.doctor_specialite);
         doctorPhone = findViewById(R.id.doctor_phone);
         doctorEmail = findViewById(R.id.doctor_email);
         doctorAddress = findViewById(R.id.doctor_address);
-
-        doctorImage = findViewById(R.id.imageView3);
-        Drawable defaultImage = getResources().getDrawable(R.drawable.ic_anon_user_48dp); //default user image
+        doctorAbout = findViewById(R.id.doctor_about);
         AlertDialog dialog = new SpotsDialog.Builder().setContext(this).setCancelable(true).build();
         dialog.show();
 
@@ -67,12 +66,12 @@ public class ProfilePatientActivity extends AppCompatActivity {
         pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.with(ProfilePatientActivity.this)
+                Picasso.with(profileDoctorActivity.this)
                         .load(uri)
                         .placeholder(R.mipmap.ic_launcher)
                         .fit()
                         .centerCrop()
-                        .into(doctorImage);//hna fin kayn Image view
+                        .into(doctorImage);
                 dialog.dismiss();
                 // profileImage.setImageURI(uri);
             }
@@ -87,25 +86,24 @@ public class ProfilePatientActivity extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 doctorName.setText(documentSnapshot.getString("name"));
-                // doctorSpe.setText(documentSnapshot.getString("dateNaissance"));
+                doctorSpe.setText(documentSnapshot.getString("specialite"));
                 doctorPhone.setText(documentSnapshot.getString("tel"));
                 doctorEmail.setText(documentSnapshot.getString("email"));
                 doctorAddress.setText(documentSnapshot.getString("adresse"));
-                doctorImage.setImageDrawable(defaultImage);
             }
         });
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
-//     setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
 
-      //  getSupportActionBar().setDisplayShowHomeEnabled(true);
-       // getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-     //   getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        //getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-     //  getSupportActionBar().setDisplayShowTitleEnabled(false);
-       // Get access to the custom title view
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        // Get access to the custom title view
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
     }
 
@@ -113,7 +111,7 @@ public class ProfilePatientActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-      // getMenuInflater().inflate(R.menu.top_app_bar, menu);
+       // getMenuInflater().inflate(R.menu.top_app_bar, menu);
         return true;
     }
 
@@ -139,13 +137,13 @@ public class ProfilePatientActivity extends AppCompatActivity {
     }
 
     private void startHomeActivity() {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, DoctorHomeActivity.class);
         startActivity(intent);
         finish();
     }
 
     private void startEditActivity() {
-        Intent intent = new Intent(this, editProfilePatientActivity.class);
+        Intent intent = new Intent(this, EditProfileDoctorActivity.class);
         intent.putExtra("CURRENT_NAME", doctorName.getText().toString());
         intent.putExtra("CURRENT_PHONE", doctorPhone.getText().toString());
         intent.putExtra("CURRENT_ADDRESS", doctorAddress.getText().toString());
